@@ -1,5 +1,0 @@
-%syntax-version=1.0.0
-%project=kita-db
-%uri=https://github.com/sqitchers/sqitch-mysql-intro/
-
-groups 2020-08-13T11:23:01Z Levin Keller <post@levinkeller.de> # Creates the groups table.

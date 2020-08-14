@@ -1,0 +1,24 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": {
+       "ENV": "DB_USER"
+    },
+    "password": {
+      "ENV": "DB_PASSWORD"
+    },
+    "host": {
+      "ENV": "DB_HOST"
+    },
+    "database": {
+      "ENV": "DB_NAME"
+    }
+  },
+  "test": {
+    "driver": "mysql",
+    "user": "user",
+    "password": "password",
+    "host": "test-db",
+    "database": "kita"
+  }
+}
