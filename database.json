@@ -19,6 +19,7 @@
     "user": "user",
     "password": "password",
     "host": "test-db",
-    "database": "kita"
+    "database": "kita",
+    "multipleStatements": true
   }
 }

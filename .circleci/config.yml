@@ -4,7 +4,7 @@ orbs:
 jobs:
   test:
     docker:
-      - image: node:13
+      - image: 'cimg/node:lts'
       - image: mysql:5.6
         name: test-db
         environment:
