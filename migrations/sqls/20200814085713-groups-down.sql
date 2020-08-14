@@ -1,1 +1,1 @@
-drop table `groups`;
+drop table gruppen;
