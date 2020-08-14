@@ -1,26 +1,46 @@
 import { assert } from 'chai'
 import * as R from 'ramda'
-import { createTestDB, Database } from './database'
 
 describe('Manage groups', () => {
-  let db: Database
-  beforeAll(async () => {
-    db = await createTestDB()
-    await db.migration.up()
+  beforeEach(async () => {
+    await global.db.migration.up()
   })
-  afterAll(async () => {
-    await db.migration.down()
-    await db.connection.end()
+
+  afterEach(async () => {
+    await global.db.migration.down()
   })
+
   test('Addition and removal', async () => {
-    await db.connection.execute<any>(
+    await global.db.connection.execute<any>(
       sql`INSERT INTO groups (name, floor) VALUES (?,?);`,
       ['Rotkehlchen', '1'],
     )
 
     assert.deepEqual(
-      R.head(await db.connection.execute<any>(sql`SELECT * FROM groups;`)),
+      R.head(
+        await global.db.connection.execute<any>(sql`SELECT * FROM groups;`),
+      ),
       [{ id: 1, name: 'Rotkehlchen', floor: '1' }],
+      'Should have exactly one group.',
+    )
+
+    await global.db.connection.execute<any>(
+      sql`INSERT INTO groups (name, floor) VALUES (?,?);`,
+      ['Spatzen', '1'],
+    )
+
+    await global.db.connection.execute<any>(
+      sql`INSERT INTO groups (name, floor) VALUES (?,?);`,
+      ['Sonnen', '3'],
+    )
+    assert.deepEqual(
+      R.head(
+        await global.db.connection.execute<any>(
+          sql`SELECT (name) FROM groups WHERE floor='1'`,
+        ),
+      ),
+      [{ name: 'Rotkehlchen' }, { name: 'Spatzen' }],
+      'Should report Rotkehlchen and Spatzen on floor 1.',
     )
   })
 })
