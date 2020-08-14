@@ -35,7 +35,7 @@
   "scripts": {
     "docker": "CURRENT_UID=$(id -u):$(id -g) docker-compose run --rm runner",
     "test": "yarn docker yarn test:container",
-    "test:container": "jest",
+    "test:container": "jest -i",
     "lint": "eslint src/**/*.ts"
   },
   "dependencies": {

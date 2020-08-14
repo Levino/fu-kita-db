@@ -1,4 +1,4 @@
-create table `groups` (
+create table gruppen (
      id INT NOT NULL AUTO_INCREMENT,
      name VARCHAR(30) NOT NULL,
      floor ENUM('1','2','3'),
