@@ -7,7 +7,7 @@ describe('Manage gruppen', () => {
   })
 
   afterEach(async () => {
-    await global.db.migration.down()
+    await global.db.migration.reset()
   })
 
   test('Addition and removal', async () => {

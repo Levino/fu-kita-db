@@ -1198,13 +1198,6 @@
   dependencies:
     "@types/mysql" types/mysql
 
-"@types/mysql@^2.15.6":
-  version "2.15.15"
-  resolved "https://registry.npmjs.org/@types/mysql/-/mysql-2.15.15.tgz#af2223d2841091a5a819eabee6dff19567f1cf1f"
-  integrity sha512-1GJnq7RwuFPRicMHdT53vza5v39nep9OKIbozxNUpFXP04CydcdWrqpZQ+MlVdlLFCisWnnt09xughajjWpFsw==
-  dependencies:
-    "@types/node" "*"
-
 "@types/mysql@types/mysql":
   version "2.0.0"
   resolved "https://codeload.github.com/types/mysql/tar.gz/c26b1bc2bac17010081455e3127a90fb2eafcec9"
@@ -3966,7 +3959,7 @@ mysql2@^2.1.0:
     seq-queue "^0.0.5"
     sqlstring "^2.3.1"
 
-mysql@^2.17.1, mysql@^2.18.1:
+mysql@^2.17.1:
   version "2.18.1"
   resolved "https://registry.npmjs.org/mysql/-/mysql-2.18.1.tgz#2254143855c5a8c73825e4522baf2ea021766717"
   integrity sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==
@@ -4810,15 +4803,6 @@ seq-queue@^0.0.5:
   version "0.0.5"
   resolved "https://registry.npmjs.org/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
   integrity sha1-1WgS4cAXpuTnw+Ojeh2m143TyT4=
-
-serverless-mysql@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.npmjs.org/serverless-mysql/-/serverless-mysql-1.5.4.tgz#c8562777e42440d6ebed0f96e17278bafef1f2d6"
-  integrity sha512-q7hJh8NivO2g4CcZ7wy3KTctsFpqx/P4zrVJTwsJJoV9v9QouGv0IFLKXW0rkOqbHSQRvth/eTbf7noYBJzPiQ==
-  dependencies:
-    mysql "^2.18.1"
-  optionalDependencies:
-    "@types/mysql" "^2.15.6"
 
 set-blocking@^2.0.0:
   version "2.0.0"

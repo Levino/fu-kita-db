@@ -1,12 +1,12 @@
 import { assert } from 'chai'
 import * as R from 'ramda'
-describe('Kids', () => {
+describe('Children', () => {
   beforeEach(async () => {
     await global.db.migration.up()
   })
 
   afterEach(async () => {
-    await global.db.migration.down()
+    await global.db.migration.reset()
   })
 
   test('Tests', async () => {
@@ -22,18 +22,18 @@ describe('Kids', () => {
       ['Sonnen', '3'],
     )
     await global.db.connection.execute<any>(
-      sql`INSERT INTO kids (name, gruppe) VALUES (?,?);`,
+      sql`INSERT INTO children (name, gruppe) VALUES (?,?);`,
       ['Peter Pan', rotkehlchenId],
     )
     await global.db.connection.execute<any>(
-      sql`INSERT INTO kids (name, gruppe) VALUES (?,?);`,
+      sql`INSERT INTO children (name, gruppe) VALUES (?,?);`,
       ['Uschi Obermeier', sonnenId],
     )
 
     assert.deepEqual(
       R.head(
         await global.db.connection.execute<any>(
-          sql`SELECT gruppen.name FROM kids INNER JOIN gruppen ON kids.gruppe=gruppen.id WHERE kids.name=?;`,
+          sql`SELECT gruppen.name FROM children INNER JOIN gruppen ON children.gruppe=gruppen.id WHERE children.name=?;`,
           ['Uschi Obermeier'],
         ),
       ),
